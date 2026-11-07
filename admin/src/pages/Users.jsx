@@ -37,7 +37,10 @@ export default function Users() {
 
   const resetLink = (u) => {
     api.post('/auth/reset-link', { user_id: u.id })
-      .then(d => flash(`Link de redefinição: ${window.location.origin}${d.link}`))
+      .then(d => {
+        const base = window.location.pathname.startsWith('/admin') ? '/admin' : '';
+        flash(`Link de redefinição: ${window.location.origin}${base}${d.link}`);
+      })
       .catch(err => flash(err.message));
   };
 

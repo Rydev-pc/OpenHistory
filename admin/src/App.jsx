@@ -27,9 +27,10 @@ function AdminOnly({ children }) {
 
 export default function App() {
   const location = useLocation();
+  const base = window.location.pathname.startsWith('/admin') ? '/admin' : '';
 
-  if (location.pathname === '/resetar-senha') return <ResetPassword />;
-  if (location.pathname === '/aceitar-convite') return <AcceptInvite />;
+  if (location.pathname === base + '/resetar-senha') return <ResetPassword />;
+  if (location.pathname === base + '/aceitar-convite') return <AcceptInvite />;
 
   return (
     <Routes>
