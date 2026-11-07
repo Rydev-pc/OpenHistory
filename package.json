@@ -1,0 +1,15 @@
+{
+  "name": "openhistory",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Open History - guia de historia minimalista com painel de administrador e secao Apoie este Criador",
+  "scripts": {
+    "server": "npm --prefix server start",
+    "app": "npm --prefix app dev",
+    "admin": "npm --prefix admin dev",
+    "install:all": "npm --prefix server install && npm --prefix app install && npm --prefix admin install",
+    "build:app": "npm --prefix app run build",
+    "build:admin": "npm --prefix admin run build",
+    "seed": "npm --prefix server run seed"
+  }
+}
