@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
-const SECRET_FILE = path.join(__dirname, 'data', '.secret');
+const SECRET_FILE = path.join(__dirname, '..', 'data', '.secret');
 let SECRET = process.env.JWT_SECRET;
 if (!SECRET) {
   if (fs.existsSync(SECRET_FILE)) {
